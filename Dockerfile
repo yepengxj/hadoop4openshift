@@ -1,5 +1,6 @@
 FROM java:8-jdk
 
+
 MAINTAINER John Erik Halse
 
 # set java environment variable 
