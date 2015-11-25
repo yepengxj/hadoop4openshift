@@ -19,7 +19,6 @@ ENV YARN_HOME=$HADOOP_INSTALL
 ENV YARN_CONF_DIR=$HADOOP_INSTALL/etc/hadoop
 ENV DATA_DIR=/var/hadoop
 
-
 #install hadoop 2.7.1
 #ADD hadoop-${HADOOP_VERSION}.tar.gz /usr/local/
 run wget http://apache.fayea.com/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz -O /usr/local/hadoop-2.7.1.tar.gz
