@@ -6,6 +6,7 @@ mkdir -p ${DATA_DIR}/hdfs/datanode
 HOST_IP=`ip -o -4 a | grep eth0 | sed -e 's/.*inet \([^/]*\).*/\1/'`
 sed -i -e"s/<namenode_ip>/${HOST_IP}/" $HADOOP_INSTALL/etc/hadoop/core-site.xml
 sed -i -e"s/<namenode_ip>/${HOST_IP}/" $HADOOP_INSTALL/etc/hadoop/yarn-site.xml
+sed -i -e"s/<namenode_ip>/${HOST_IP}/" $HADOOP_INSTALL/etc/hadoop/mapred-site.xml
 sed -i -e"s/<ip>/${HOST_IP}/g" $HADOOP_INSTALL/etc/hadoop/hdfs-site.xml
 
 $HADOOP_INSTALL/sbin/yarn-daemon.sh start resourcemanager

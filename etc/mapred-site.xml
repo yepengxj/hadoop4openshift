@@ -2,8 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration>
-  <property>
+<property>
     <name>mapreduce.framework.name</name>
     <value>yarn</value>
-  </property>
+</property>
+<property>
+    <name>mapreduce.jobhistory.address</name>
+    <value><namenode_ip>:10020</value>
+</property>
+<property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value><namenode_ip>:19888</value>
+</property>
 </configuration>
