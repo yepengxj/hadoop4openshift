@@ -22,7 +22,10 @@ ENV DATA_DIR=/var/hadoop
 
 #install hadoop 2.7.1
 #ADD hadoop-${HADOOP_VERSION}.tar.gz /usr/local/
-run wget http://apache.fayea.com/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz -O /usr/local/hadoop-2.7.1.tar.gz
+run wget http://archive.apache.org/dist/hadoop/core/hadoop-2.7.1/hadoop-2.7.1.tar.gz -O /usr/local/hadoop-2.7.1.tar.gz \
+    && tar -xzf /usr/local/hadoop-2.7.1.tar.gz -C /usr/local \
+    && rm  /usr/local/hadoop-2.7.1.tar.gz
+
 RUN ln -s /usr/local/hadoop-${HADOOP_VERSION} ${HADOOP_INSTALL}
 
 COPY etc/* $HADOOP_INSTALL/etc/hadoop/
