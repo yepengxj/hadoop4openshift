@@ -6,7 +6,7 @@ mkdir -p ${DATA_DIR}/hdfs/datanode
 cp $HADOOP_INSTALL/etc/hadoop/core-site-slave.xml $HADOOP_INSTALL/etc/hadoop/core-site.xml
 
 echo *************************
-NAMENODE_IP=`curl -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" -k -XGET "https://${APP_HOST_NAME}/api/v1/namespaces/${POD_NAMESPACE}/pods?labelSelector=name=hadoop-namenode" | grep podIP | sed -e 's/.*"podIP": "\(.*\)".*/\1/'`
+NAMENODE_IP=`curl -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" -k -XGET "https://openshift.default.svc.cluster.local/api/v1/namespaces/${POD_NAMESPACE}/pods?labelSelector=name=hadoop-namenode" | grep podIP | sed -e 's/.*"podIP": "\(.*\)".*/\1/'`
 echo NAMENODE ${NAMENODE_IP}
 echo *************************
 
